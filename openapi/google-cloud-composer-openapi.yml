@@ -1,0 +1,483 @@
+openapi: 3.1.0
+info:
+  title: Google Cloud Composer API
+  description: >-
+    The Cloud Composer API manages Apache Airflow environments on Google Cloud
+    Platform. It provides methods to create, update, and delete environments,
+    query available image versions, and monitor long-running operations.
+  version: v1
+  contact:
+    name: Google Cloud
+    url: https://cloud.google.com/composer
+  license:
+    name: Apache 2.0
+    url: https://www.apache.org/licenses/LICENSE-2.0
+externalDocs:
+  description: Google Cloud Composer Documentation
+  url: https://cloud.google.com/composer/docs/reference/rest
+servers:
+- url: https://composer.googleapis.com/v1
+  description: Google Cloud Composer API v1
+security:
+- oauth2: []
+tags:
+- name: Environments
+  description: Operations for managing Composer environments
+- name: ImageVersions
+  description: Operations for listing available image versions
+- name: Operations
+  description: Long-running operation management
+paths:
+  /projects/{projectId}/locations/{location}/environments:
+    get:
+      operationId: listEnvironments
+      summary: List Composer environments
+      description: Lists environments in the specified project and location.
+      tags:
+      - Environments
+      parameters:
+      - name: projectId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: location
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: pageSize
+        in: query
+        schema:
+          type: integer
+      - name: pageToken
+        in: query
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ListEnvironmentsResponse'
+    post:
+      operationId: createEnvironment
+      summary: Create a Composer environment
+      description: Creates a new Composer environment.
+      tags:
+      - Environments
+      parameters:
+      - name: projectId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: location
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Environment'
+      responses:
+        '200':
+          description: Successful response with long-running operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Operation'
+  /projects/{projectId}/locations/{location}/environments/{environmentId}:
+    get:
+      operationId: getEnvironment
+      summary: Get a Composer environment
+      description: Gets an existing Composer environment.
+      tags:
+      - Environments
+      parameters:
+      - name: projectId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: location
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: environmentId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Environment'
+    patch:
+      operationId: updateEnvironment
+      summary: Update a Composer environment
+      description: Updates an existing Composer environment.
+      tags:
+      - Environments
+      parameters:
+      - name: projectId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: location
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: environmentId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: updateMask
+        in: query
+        schema:
+          type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Environment'
+      responses:
+        '200':
+          description: Successful response with long-running operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Operation'
+    delete:
+      operationId: deleteEnvironment
+      summary: Delete a Composer environment
+      description: Deletes an existing Composer environment.
+      tags:
+      - Environments
+      parameters:
+      - name: projectId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: location
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: environmentId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Successful response with long-running operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Operation'
+  /projects/{projectId}/locations/{location}/imageVersions:
+    get:
+      operationId: listImageVersions
+      summary: List image versions
+      description: Lists available image versions for Composer environments.
+      tags:
+      - ImageVersions
+      parameters:
+      - name: projectId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: location
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: pageSize
+        in: query
+        schema:
+          type: integer
+      - name: pageToken
+        in: query
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ListImageVersionsResponse'
+  /projects/{projectId}/locations/{location}/operations:
+    get:
+      operationId: listOperations
+      summary: List operations
+      description: Lists operations for the specified project and location.
+      tags:
+      - Operations
+      parameters:
+      - name: projectId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: location
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: pageSize
+        in: query
+        schema:
+          type: integer
+      - name: pageToken
+        in: query
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ListOperationsResponse'
+  /projects/{projectId}/locations/{location}/operations/{operationId}:
+    get:
+      operationId: getOperation
+      summary: Get an operation
+      description: Gets the latest state of a long-running operation.
+      tags:
+      - Operations
+      parameters:
+      - name: projectId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: location
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: operationId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Operation'
+components:
+  securitySchemes:
+    oauth2:
+      type: oauth2
+      flows:
+        authorizationCode:
+          authorizationUrl: https://accounts.google.com/o/oauth2/auth
+          tokenUrl: https://oauth2.googleapis.com/token
+          scopes:
+            https://www.googleapis.com/auth/cloud-platform: Full access to Google Cloud Platform
+  schemas:
+    Environment:
+      type: object
+      properties:
+        name:
+          type: string
+          description: The resource name of the environment.
+        config:
+          type: object
+          description: Configuration parameters for the environment.
+          properties:
+            gkeCluster:
+              type: string
+              description: Output only. The Kubernetes Engine cluster used to run the environment.
+            dagGcsPrefix:
+              type: string
+              description: Output only. The Cloud Storage prefix of the DAGs for the environment.
+            nodeCount:
+              type: integer
+              description: The number of nodes in the Kubernetes Engine cluster.
+            softwareConfig:
+              type: object
+              properties:
+                imageVersion:
+                  type: string
+                airflowConfigOverrides:
+                  type: object
+                  additionalProperties:
+                    type: string
+                pypiPackages:
+                  type: object
+                  additionalProperties:
+                    type: string
+                envVariables:
+                  type: object
+                  additionalProperties:
+                    type: string
+                pythonVersion:
+                  type: string
+            nodeConfig:
+              type: object
+              properties:
+                location:
+                  type: string
+                machineType:
+                  type: string
+                network:
+                  type: string
+                subnetwork:
+                  type: string
+                diskSizeGb:
+                  type: integer
+                oauthScopes:
+                  type: array
+                  items:
+                    type: string
+                serviceAccount:
+                  type: string
+                tags:
+                  type: array
+                  items:
+                    type: string
+            privateEnvironmentConfig:
+              type: object
+              properties:
+                enablePrivateEnvironment:
+                  type: boolean
+                privateClusterConfig:
+                  type: object
+                  properties:
+                    enablePrivateEndpoint:
+                      type: boolean
+                    masterIpv4CidrBlock:
+                      type: string
+            webServerNetworkAccessControl:
+              type: object
+              properties:
+                allowedIpRanges:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      value:
+                        type: string
+                      description:
+                        type: string
+            environmentSize:
+              type: string
+              enum:
+              - ENVIRONMENT_SIZE_UNSPECIFIED
+              - ENVIRONMENT_SIZE_SMALL
+              - ENVIRONMENT_SIZE_MEDIUM
+              - ENVIRONMENT_SIZE_LARGE
+            airflowUri:
+              type: string
+              description: Output only. The URI of the Apache Airflow Web UI.
+        uuid:
+          type: string
+          description: Output only. The UUID of the environment.
+        state:
+          type: string
+          enum:
+          - STATE_UNSPECIFIED
+          - CREATING
+          - RUNNING
+          - UPDATING
+          - DELETING
+          - ERROR
+          description: The current state of the environment.
+        createTime:
+          type: string
+          format: date-time
+        updateTime:
+          type: string
+          format: date-time
+        labels:
+          type: object
+          additionalProperties:
+            type: string
+    ListEnvironmentsResponse:
+      type: object
+      properties:
+        environments:
+          type: array
+          items:
+            $ref: '#/components/schemas/Environment'
+        nextPageToken:
+          type: string
+    ListImageVersionsResponse:
+      type: object
+      properties:
+        imageVersions:
+          type: array
+          items:
+            type: object
+            properties:
+              imageVersionId:
+                type: string
+              isDefault:
+                type: boolean
+              supportedPythonVersions:
+                type: array
+                items:
+                  type: string
+              releaseDate:
+                type: object
+                properties:
+                  year:
+                    type: integer
+                  month:
+                    type: integer
+                  day:
+                    type: integer
+              creationDisabled:
+                type: boolean
+              upgradeDisabled:
+                type: boolean
+        nextPageToken:
+          type: string
+    Operation:
+      type: object
+      properties:
+        name:
+          type: string
+        metadata:
+          type: object
+        done:
+          type: boolean
+        error:
+          type: object
+          properties:
+            code:
+              type: integer
+            message:
+              type: string
+        response:
+          type: object
+    ListOperationsResponse:
+      type: object
+      properties:
+        operations:
+          type: array
+          items:
+            $ref: '#/components/schemas/Operation'
+        nextPageToken:
+          type: string

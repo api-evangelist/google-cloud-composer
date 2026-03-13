@@ -1,0 +1,104 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/google-cloud-composer/refs/heads/main/json-schema/google-cloud-composer-environment-schema.json",
+  "title": "Google Cloud Composer Environment",
+  "description": "Represents a Cloud Composer environment, which is a managed Apache Airflow instance for orchestrating workflows and data pipelines.",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "The resource name of the environment in the format projects/{project}/locations/{location}/environments/{environment}."
+    },
+    "config": {
+      "type": "object",
+      "description": "Configuration parameters for the environment.",
+      "properties": {
+        "gkeCluster": {
+          "type": "string",
+          "description": "Output only. The GKE cluster used to run the environment."
+        },
+        "dagGcsPrefix": {
+          "type": "string",
+          "description": "Output only. The Cloud Storage prefix of the DAGs."
+        },
+        "nodeCount": {
+          "type": "integer",
+          "description": "The number of nodes in the GKE cluster."
+        },
+        "softwareConfig": {
+          "type": "object",
+          "properties": {
+            "imageVersion": {
+              "type": "string",
+              "description": "The version of the Composer/Airflow image."
+            },
+            "airflowConfigOverrides": {
+              "type": "object",
+              "additionalProperties": { "type": "string" }
+            },
+            "pypiPackages": {
+              "type": "object",
+              "additionalProperties": { "type": "string" }
+            },
+            "envVariables": {
+              "type": "object",
+              "additionalProperties": { "type": "string" }
+            },
+            "pythonVersion": {
+              "type": "string"
+            }
+          }
+        },
+        "nodeConfig": {
+          "type": "object",
+          "properties": {
+            "location": { "type": "string" },
+            "machineType": { "type": "string" },
+            "network": { "type": "string" },
+            "subnetwork": { "type": "string" },
+            "diskSizeGb": { "type": "integer" },
+            "serviceAccount": { "type": "string" }
+          }
+        },
+        "environmentSize": {
+          "type": "string",
+          "enum": [
+            "ENVIRONMENT_SIZE_UNSPECIFIED",
+            "ENVIRONMENT_SIZE_SMALL",
+            "ENVIRONMENT_SIZE_MEDIUM",
+            "ENVIRONMENT_SIZE_LARGE"
+          ]
+        },
+        "airflowUri": {
+          "type": "string",
+          "format": "uri",
+          "description": "Output only. The URI of the Apache Airflow Web UI."
+        }
+      }
+    },
+    "uuid": {
+      "type": "string",
+      "description": "Output only. The UUID of the environment."
+    },
+    "state": {
+      "type": "string",
+      "enum": ["STATE_UNSPECIFIED", "CREATING", "RUNNING", "UPDATING", "DELETING", "ERROR"],
+      "description": "The current state of the environment."
+    },
+    "createTime": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Output only. The time the environment was created."
+    },
+    "updateTime": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Output only. The time the environment was last updated."
+    },
+    "labels": {
+      "type": "object",
+      "additionalProperties": { "type": "string" },
+      "description": "User-defined labels for this environment."
+    }
+  }
+}

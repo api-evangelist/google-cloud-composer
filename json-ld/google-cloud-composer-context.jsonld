@@ -1,0 +1,31 @@
+{
+  "@context": {
+    "@vocab": "https://schema.org/",
+    "gcloud": "https://cloud.google.com/composer/docs/reference/rest/v1/projects.locations.environments#",
+    "Environment": "gcloud:Environment",
+    "name": "schema:name",
+    "description": "schema:description",
+    "state": "schema:status",
+    "uuid": "schema:identifier",
+    "createTime": "schema:dateCreated",
+    "updateTime": "schema:dateModified",
+    "labels": "schema:keywords",
+    "config": {
+      "@id": "schema:Configuration",
+      "@context": {
+        "gkeCluster": "schema:identifier",
+        "dagGcsPrefix": "schema:url",
+        "nodeCount": "schema:numberOfItems",
+        "airflowUri": "schema:url",
+        "environmentSize": "schema:size",
+        "softwareConfig": {
+          "@id": "schema:SoftwareApplication",
+          "@context": {
+            "imageVersion": "schema:softwareVersion",
+            "pythonVersion": "schema:programmingLanguage"
+          }
+        }
+      }
+    }
+  }
+}
