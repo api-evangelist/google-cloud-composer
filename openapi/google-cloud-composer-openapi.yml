@@ -16,44 +16,44 @@ externalDocs:
   description: Google Cloud Composer Documentation
   url: https://cloud.google.com/composer/docs/reference/rest
 servers:
-- url: https://composer.googleapis.com/v1
-  description: Google Cloud Composer API v1
+  - url: https://composer.googleapis.com/v1
+    description: Google Cloud Composer API v1
 security:
-- oauth2: []
+  - oauth2: []
 tags:
-- name: Environments
-  description: Operations for managing Composer environments
-- name: ImageVersions
-  description: Operations for listing available image versions
-- name: Operations
-  description: Long-running operation management
+  - name: Environments
+    description: Operations for managing Composer environments
+  - name: ImageVersions
+    description: Operations for listing available image versions
+  - name: Operations
+    description: Long-running operation management
 paths:
   /projects/{projectId}/locations/{location}/environments:
     get:
       operationId: listEnvironments
-      summary: List Composer environments
+      summary: Google Cloud Composer List Composer environments
       description: Lists environments in the specified project and location.
       tags:
-      - Environments
+        - Environments
       parameters:
-      - name: projectId
-        in: path
-        required: true
-        schema:
-          type: string
-      - name: location
-        in: path
-        required: true
-        schema:
-          type: string
-      - name: pageSize
-        in: query
-        schema:
-          type: integer
-      - name: pageToken
-        in: query
-        schema:
-          type: string
+        - name: projectId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: location
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: pageSize
+          in: query
+          schema:
+            type: integer
+        - name: pageToken
+          in: query
+          schema:
+            type: string
       responses:
         '200':
           description: Successful response
@@ -63,21 +63,21 @@ paths:
                 $ref: '#/components/schemas/ListEnvironmentsResponse'
     post:
       operationId: createEnvironment
-      summary: Create a Composer environment
+      summary: Google Cloud Composer Create a Composer environment
       description: Creates a new Composer environment.
       tags:
-      - Environments
+        - Environments
       parameters:
-      - name: projectId
-        in: path
-        required: true
-        schema:
-          type: string
-      - name: location
-        in: path
-        required: true
-        schema:
-          type: string
+        - name: projectId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: location
+          in: path
+          required: true
+          schema:
+            type: string
       requestBody:
         required: true
         content:
@@ -94,26 +94,26 @@ paths:
   /projects/{projectId}/locations/{location}/environments/{environmentId}:
     get:
       operationId: getEnvironment
-      summary: Get a Composer environment
+      summary: Google Cloud Composer Get a Composer environment
       description: Gets an existing Composer environment.
       tags:
-      - Environments
+        - Environments
       parameters:
-      - name: projectId
-        in: path
-        required: true
-        schema:
-          type: string
-      - name: location
-        in: path
-        required: true
-        schema:
-          type: string
-      - name: environmentId
-        in: path
-        required: true
-        schema:
-          type: string
+        - name: projectId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: location
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: environmentId
+          in: path
+          required: true
+          schema:
+            type: string
       responses:
         '200':
           description: Successful response
@@ -123,30 +123,30 @@ paths:
                 $ref: '#/components/schemas/Environment'
     patch:
       operationId: updateEnvironment
-      summary: Update a Composer environment
+      summary: Google Cloud Composer Update a Composer environment
       description: Updates an existing Composer environment.
       tags:
-      - Environments
+        - Environments
       parameters:
-      - name: projectId
-        in: path
-        required: true
-        schema:
-          type: string
-      - name: location
-        in: path
-        required: true
-        schema:
-          type: string
-      - name: environmentId
-        in: path
-        required: true
-        schema:
-          type: string
-      - name: updateMask
-        in: query
-        schema:
-          type: string
+        - name: projectId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: location
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: environmentId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: updateMask
+          in: query
+          schema:
+            type: string
       requestBody:
         required: true
         content:
@@ -162,26 +162,26 @@ paths:
                 $ref: '#/components/schemas/Operation'
     delete:
       operationId: deleteEnvironment
-      summary: Delete a Composer environment
+      summary: Google Cloud Composer Delete a Composer environment
       description: Deletes an existing Composer environment.
       tags:
-      - Environments
+        - Environments
       parameters:
-      - name: projectId
-        in: path
-        required: true
-        schema:
-          type: string
-      - name: location
-        in: path
-        required: true
-        schema:
-          type: string
-      - name: environmentId
-        in: path
-        required: true
-        schema:
-          type: string
+        - name: projectId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: location
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: environmentId
+          in: path
+          required: true
+          schema:
+            type: string
       responses:
         '200':
           description: Successful response with long-running operation
@@ -192,29 +192,29 @@ paths:
   /projects/{projectId}/locations/{location}/imageVersions:
     get:
       operationId: listImageVersions
-      summary: List image versions
+      summary: Google Cloud Composer List image versions
       description: Lists available image versions for Composer environments.
       tags:
-      - ImageVersions
+        - ImageVersions
       parameters:
-      - name: projectId
-        in: path
-        required: true
-        schema:
-          type: string
-      - name: location
-        in: path
-        required: true
-        schema:
-          type: string
-      - name: pageSize
-        in: query
-        schema:
-          type: integer
-      - name: pageToken
-        in: query
-        schema:
-          type: string
+        - name: projectId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: location
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: pageSize
+          in: query
+          schema:
+            type: integer
+        - name: pageToken
+          in: query
+          schema:
+            type: string
       responses:
         '200':
           description: Successful response
@@ -225,29 +225,29 @@ paths:
   /projects/{projectId}/locations/{location}/operations:
     get:
       operationId: listOperations
-      summary: List operations
+      summary: Google Cloud Composer List operations
       description: Lists operations for the specified project and location.
       tags:
-      - Operations
+        - Operations
       parameters:
-      - name: projectId
-        in: path
-        required: true
-        schema:
-          type: string
-      - name: location
-        in: path
-        required: true
-        schema:
-          type: string
-      - name: pageSize
-        in: query
-        schema:
-          type: integer
-      - name: pageToken
-        in: query
-        schema:
-          type: string
+        - name: projectId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: location
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: pageSize
+          in: query
+          schema:
+            type: integer
+        - name: pageToken
+          in: query
+          schema:
+            type: string
       responses:
         '200':
           description: Successful response
@@ -258,26 +258,26 @@ paths:
   /projects/{projectId}/locations/{location}/operations/{operationId}:
     get:
       operationId: getOperation
-      summary: Get an operation
+      summary: Google Cloud Composer Get an operation
       description: Gets the latest state of a long-running operation.
       tags:
-      - Operations
+        - Operations
       parameters:
-      - name: projectId
-        in: path
-        required: true
-        schema:
-          type: string
-      - name: location
-        in: path
-        required: true
-        schema:
-          type: string
-      - name: operationId
-        in: path
-        required: true
-        schema:
-          type: string
+        - name: projectId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: location
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: operationId
+          in: path
+          required: true
+          schema:
+            type: string
       responses:
         '200':
           description: Successful response
@@ -384,10 +384,10 @@ components:
             environmentSize:
               type: string
               enum:
-              - ENVIRONMENT_SIZE_UNSPECIFIED
-              - ENVIRONMENT_SIZE_SMALL
-              - ENVIRONMENT_SIZE_MEDIUM
-              - ENVIRONMENT_SIZE_LARGE
+                - ENVIRONMENT_SIZE_UNSPECIFIED
+                - ENVIRONMENT_SIZE_SMALL
+                - ENVIRONMENT_SIZE_MEDIUM
+                - ENVIRONMENT_SIZE_LARGE
             airflowUri:
               type: string
               description: Output only. The URI of the Apache Airflow Web UI.
@@ -397,12 +397,12 @@ components:
         state:
           type: string
           enum:
-          - STATE_UNSPECIFIED
-          - CREATING
-          - RUNNING
-          - UPDATING
-          - DELETING
-          - ERROR
+            - STATE_UNSPECIFIED
+            - CREATING
+            - RUNNING
+            - UPDATING
+            - DELETING
+            - ERROR
           description: The current state of the environment.
         createTime:
           type: string
