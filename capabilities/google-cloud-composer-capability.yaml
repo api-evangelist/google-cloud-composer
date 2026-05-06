@@ -1,0 +1,558 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Google Cloud Composer API
+  description: The Cloud Composer API manages Apache Airflow environments on Google Cloud Platform. It provides methods to
+    create, update, and delete environments, query available image versions, and monitor long-running operations.
+  tags:
+  - Google
+  - Cloud
+  - Composer
+  - API
+  created: '2026-05-06'
+  modified: '2026-05-06'
+capability:
+  consumes:
+  - type: http
+    namespace: google-cloud-composer
+    baseUri: https://composer.googleapis.com/v1
+    description: Google Cloud Composer API HTTP API.
+    authentication:
+      type: bearer
+      token: '{{GOOGLE_CLOUD_COMPOSER_TOKEN}}'
+    resources:
+    - name: projects-projectid-locations-location-environmen
+      path: /projects/{projectId}/locations/{location}/environments
+      operations:
+      - name: listenvironments
+        method: GET
+        description: Google Cloud Composer List Composer environments
+        inputParameters:
+        - name: projectId
+          in: path
+          type: string
+          required: true
+        - name: location
+          in: path
+          type: string
+          required: true
+        - name: pageSize
+          in: query
+          type: integer
+        - name: pageToken
+          in: query
+          type: string
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: createenvironment
+        method: POST
+        description: Google Cloud Composer Create a Composer environment
+        inputParameters:
+        - name: projectId
+          in: path
+          type: string
+          required: true
+        - name: location
+          in: path
+          type: string
+          required: true
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: projects-projectid-locations-location-environmen
+      path: /projects/{projectId}/locations/{location}/environments/{environmentId}
+      operations:
+      - name: getenvironment
+        method: GET
+        description: Google Cloud Composer Get a Composer environment
+        inputParameters:
+        - name: projectId
+          in: path
+          type: string
+          required: true
+        - name: location
+          in: path
+          type: string
+          required: true
+        - name: environmentId
+          in: path
+          type: string
+          required: true
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: updateenvironment
+        method: PATCH
+        description: Google Cloud Composer Update a Composer environment
+        inputParameters:
+        - name: projectId
+          in: path
+          type: string
+          required: true
+        - name: location
+          in: path
+          type: string
+          required: true
+        - name: environmentId
+          in: path
+          type: string
+          required: true
+        - name: updateMask
+          in: query
+          type: string
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: deleteenvironment
+        method: DELETE
+        description: Google Cloud Composer Delete a Composer environment
+        inputParameters:
+        - name: projectId
+          in: path
+          type: string
+          required: true
+        - name: location
+          in: path
+          type: string
+          required: true
+        - name: environmentId
+          in: path
+          type: string
+          required: true
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: projects-projectid-locations-location-imageversi
+      path: /projects/{projectId}/locations/{location}/imageVersions
+      operations:
+      - name: listimageversions
+        method: GET
+        description: Google Cloud Composer List image versions
+        inputParameters:
+        - name: projectId
+          in: path
+          type: string
+          required: true
+        - name: location
+          in: path
+          type: string
+          required: true
+        - name: pageSize
+          in: query
+          type: integer
+        - name: pageToken
+          in: query
+          type: string
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: projects-projectid-locations-location-operations
+      path: /projects/{projectId}/locations/{location}/operations
+      operations:
+      - name: listoperations
+        method: GET
+        description: Google Cloud Composer List operations
+        inputParameters:
+        - name: projectId
+          in: path
+          type: string
+          required: true
+        - name: location
+          in: path
+          type: string
+          required: true
+        - name: pageSize
+          in: query
+          type: integer
+        - name: pageToken
+          in: query
+          type: string
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: projects-projectid-locations-location-operations
+      path: /projects/{projectId}/locations/{location}/operations/{operationId}
+      operations:
+      - name: getoperation
+        method: GET
+        description: Google Cloud Composer Get an operation
+        inputParameters:
+        - name: projectId
+          in: path
+          type: string
+          required: true
+        - name: location
+          in: path
+          type: string
+          required: true
+        - name: operationId
+          in: path
+          type: string
+          required: true
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+  exposes:
+  - type: rest
+    port: 8080
+    namespace: google-cloud-composer-rest
+    description: REST adapter for Google Cloud Composer API.
+    resources:
+    - path: /projects/{projectId}/locations/{location}/environments
+      name: listenvironments
+      operations:
+      - method: GET
+        name: listenvironments
+        description: Google Cloud Composer List Composer environments
+        call: google-cloud-composer.listenvironments
+        with:
+          projectId: rest.projectId
+          location: rest.location
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /projects/{projectId}/locations/{location}/environments
+      name: createenvironment
+      operations:
+      - method: POST
+        name: createenvironment
+        description: Google Cloud Composer Create a Composer environment
+        call: google-cloud-composer.createenvironment
+        with:
+          projectId: rest.projectId
+          location: rest.location
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /projects/{projectId}/locations/{location}/environments/{environmentId}
+      name: getenvironment
+      operations:
+      - method: GET
+        name: getenvironment
+        description: Google Cloud Composer Get a Composer environment
+        call: google-cloud-composer.getenvironment
+        with:
+          projectId: rest.projectId
+          location: rest.location
+          environmentId: rest.environmentId
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /projects/{projectId}/locations/{location}/environments/{environmentId}
+      name: updateenvironment
+      operations:
+      - method: PATCH
+        name: updateenvironment
+        description: Google Cloud Composer Update a Composer environment
+        call: google-cloud-composer.updateenvironment
+        with:
+          projectId: rest.projectId
+          location: rest.location
+          environmentId: rest.environmentId
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /projects/{projectId}/locations/{location}/environments/{environmentId}
+      name: deleteenvironment
+      operations:
+      - method: DELETE
+        name: deleteenvironment
+        description: Google Cloud Composer Delete a Composer environment
+        call: google-cloud-composer.deleteenvironment
+        with:
+          projectId: rest.projectId
+          location: rest.location
+          environmentId: rest.environmentId
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /projects/{projectId}/locations/{location}/imageVersions
+      name: listimageversions
+      operations:
+      - method: GET
+        name: listimageversions
+        description: Google Cloud Composer List image versions
+        call: google-cloud-composer.listimageversions
+        with:
+          projectId: rest.projectId
+          location: rest.location
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /projects/{projectId}/locations/{location}/operations
+      name: listoperations
+      operations:
+      - method: GET
+        name: listoperations
+        description: Google Cloud Composer List operations
+        call: google-cloud-composer.listoperations
+        with:
+          projectId: rest.projectId
+          location: rest.location
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /projects/{projectId}/locations/{location}/operations/{operationId}
+      name: getoperation
+      operations:
+      - method: GET
+        name: getoperation
+        description: Google Cloud Composer Get an operation
+        call: google-cloud-composer.getoperation
+        with:
+          projectId: rest.projectId
+          location: rest.location
+          operationId: rest.operationId
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    port: 9090
+    namespace: google-cloud-composer-mcp
+    transport: http
+    description: MCP adapter for Google Cloud Composer API for AI agent use.
+    tools:
+    - name: listenvironments
+      description: Google Cloud Composer List Composer environments
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: google-cloud-composer.listenvironments
+      with:
+        projectId: tools.projectId
+        location: tools.location
+        pageSize: tools.pageSize
+        pageToken: tools.pageToken
+      inputParameters:
+      - name: projectId
+        type: string
+        description: projectId
+        required: true
+      - name: location
+        type: string
+        description: location
+        required: true
+      - name: pageSize
+        type: integer
+        description: pageSize
+      - name: pageToken
+        type: string
+        description: pageToken
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: createenvironment
+      description: Google Cloud Composer Create a Composer environment
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: google-cloud-composer.createenvironment
+      with:
+        projectId: tools.projectId
+        location: tools.location
+      inputParameters:
+      - name: projectId
+        type: string
+        description: projectId
+        required: true
+      - name: location
+        type: string
+        description: location
+        required: true
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: getenvironment
+      description: Google Cloud Composer Get a Composer environment
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: google-cloud-composer.getenvironment
+      with:
+        projectId: tools.projectId
+        location: tools.location
+        environmentId: tools.environmentId
+      inputParameters:
+      - name: projectId
+        type: string
+        description: projectId
+        required: true
+      - name: location
+        type: string
+        description: location
+        required: true
+      - name: environmentId
+        type: string
+        description: environmentId
+        required: true
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: updateenvironment
+      description: Google Cloud Composer Update a Composer environment
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: google-cloud-composer.updateenvironment
+      with:
+        projectId: tools.projectId
+        location: tools.location
+        environmentId: tools.environmentId
+        updateMask: tools.updateMask
+      inputParameters:
+      - name: projectId
+        type: string
+        description: projectId
+        required: true
+      - name: location
+        type: string
+        description: location
+        required: true
+      - name: environmentId
+        type: string
+        description: environmentId
+        required: true
+      - name: updateMask
+        type: string
+        description: updateMask
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: deleteenvironment
+      description: Google Cloud Composer Delete a Composer environment
+      hints:
+        readOnly: false
+        destructive: true
+        idempotent: true
+      call: google-cloud-composer.deleteenvironment
+      with:
+        projectId: tools.projectId
+        location: tools.location
+        environmentId: tools.environmentId
+      inputParameters:
+      - name: projectId
+        type: string
+        description: projectId
+        required: true
+      - name: location
+        type: string
+        description: location
+        required: true
+      - name: environmentId
+        type: string
+        description: environmentId
+        required: true
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: listimageversions
+      description: Google Cloud Composer List image versions
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: google-cloud-composer.listimageversions
+      with:
+        projectId: tools.projectId
+        location: tools.location
+        pageSize: tools.pageSize
+        pageToken: tools.pageToken
+      inputParameters:
+      - name: projectId
+        type: string
+        description: projectId
+        required: true
+      - name: location
+        type: string
+        description: location
+        required: true
+      - name: pageSize
+        type: integer
+        description: pageSize
+      - name: pageToken
+        type: string
+        description: pageToken
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: listoperations
+      description: Google Cloud Composer List operations
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: google-cloud-composer.listoperations
+      with:
+        projectId: tools.projectId
+        location: tools.location
+        pageSize: tools.pageSize
+        pageToken: tools.pageToken
+      inputParameters:
+      - name: projectId
+        type: string
+        description: projectId
+        required: true
+      - name: location
+        type: string
+        description: location
+        required: true
+      - name: pageSize
+        type: integer
+        description: pageSize
+      - name: pageToken
+        type: string
+        description: pageToken
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: getoperation
+      description: Google Cloud Composer Get an operation
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: google-cloud-composer.getoperation
+      with:
+        projectId: tools.projectId
+        location: tools.location
+        operationId: tools.operationId
+      inputParameters:
+      - name: projectId
+        type: string
+        description: projectId
+        required: true
+      - name: location
+        type: string
+        description: location
+        required: true
+      - name: operationId
+        type: string
+        description: operationId
+        required: true
+      outputParameters:
+      - type: object
+        mapping: $.
+binds:
+- namespace: env
+  keys:
+    GOOGLE_CLOUD_COMPOSER_TOKEN: GOOGLE_CLOUD_COMPOSER_TOKEN
