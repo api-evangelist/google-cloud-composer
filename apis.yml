@@ -1,6 +1,7 @@
 aid: google-cloud-composer
 name: Google Cloud Composer
-description: Google Cloud Composer is a fully managed workflow orchestration service built on Apache Airflow. It helps users
+description: >-
+  Google Cloud Composer is a fully managed workflow orchestration service built on Apache Airflow. It helps users
   author, schedule, and monitor data pipelines that span across clouds and on-premises data centers.
 image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
 url: https://raw.githubusercontent.com/api-evangelist/google-cloud-composer/refs/heads/main/apis.yml
@@ -15,32 +16,28 @@ tags:
   - Workflow Orchestration
 apis:
   - name: Google Cloud Composer API
-    description: The Cloud Composer API manages Apache Airflow environments on Google Cloud Platform. It provides methods to
-      create, update, delete, and manage Composer environments, check available image versions, and monitor long-running operations.
+    description: >-
+      The Cloud Composer API manages Apache Airflow environments on Google Cloud Platform. It provides methods to
+      create, update, delete, and manage Composer environments, check available image versions, and monitor long-running
+      operations.
     image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
     humanURL: https://cloud.google.com/composer/docs
     baseURL: https://composer.googleapis.com
     tags:
-    - Airflow
-    - Environments
-    - Workflow Orchestration
+      - Airflow
+      - Environments
+      - Workflow Orchestration
     properties:
-    - type: Documentation
-      url: https://cloud.google.com/composer/docs/reference/rest
-    - type: OpenAPI
-      url: openapi/google-cloud-composer-openapi.yml
-    - type: Authentication
-      url: https://cloud.google.com/docs/authentication
-    - type: GettingStarted
-      url: https://cloud.google.com/composer/docs/quickstart
-    - type: JSONSchema
-      url: json-schema/google-cloud-composer-environment-schema.json
-    - type: NaftikoCapability
-      url: capabilities/google-cloud-composer-environments.yaml
-    - type: NaftikoCapability
-      url: capabilities/google-cloud-composer-imageversions.yaml
-    - type: NaftikoCapability
-      url: capabilities/google-cloud-composer-operations.yaml
+      - type: Documentation
+        url: https://cloud.google.com/composer/docs/reference/rest
+      - type: OpenAPI
+        url: openapi/google-cloud-composer-openapi.yml
+      - type: Authentication
+        url: https://cloud.google.com/docs/authentication
+      - type: GettingStarted
+        url: https://cloud.google.com/composer/docs/quickstart
+      - type: JSONSchema
+        url: json-schema/google-cloud-composer-environment-schema.json
 common:
   - type: GitHubOrganization
     url: https://github.com/GoogleCloudPlatform
