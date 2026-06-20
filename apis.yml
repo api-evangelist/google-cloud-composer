@@ -3,7 +3,7 @@ name: Google Cloud Composer
 description: >-
   Google Cloud Composer is a fully managed workflow orchestration service built on Apache Airflow. It helps users
   author, schedule, and monitor data pipelines that span across clouds and on-premises data centers.
-image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
 url: https://raw.githubusercontent.com/api-evangelist/google-cloud-composer/refs/heads/main/apis.yml
 created: '2026-03-13'
 modified: '2026-05-19'
@@ -20,7 +20,7 @@ apis:
       The Cloud Composer API manages Apache Airflow environments on Google Cloud Platform. It provides methods to
       create, update, delete, and manage Composer environments, check available image versions, and monitor long-running
       operations.
-    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
     humanURL: https://cloud.google.com/composer/docs
     baseURL: https://composer.googleapis.com
     tags:
