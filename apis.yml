@@ -3,7 +3,20 @@ name: Google Cloud Composer
 description: >-
   Google Cloud Composer is a fully managed workflow orchestration service built on Apache Airflow. It helps users
   author, schedule, and monitor data pipelines that span across clouds and on-premises data centers.
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+accessModel:
+  pricing: freemium
+  onboarding: self-serve
+  trial: false
+  try_now: true
+  public: false
+  label: Freemium · Self-serve signup
+  confidence: high
+  source:
+  - plans
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/google-cloud-composer.png
 url: https://raw.githubusercontent.com/api-evangelist/google-cloud-composer/refs/heads/main/apis.yml
 created: '2026-03-13'
 modified: '2026-05-19'
@@ -15,30 +28,63 @@ tags:
   - Google Cloud
   - Workflow Orchestration
 apis:
-  - name: Google Cloud Composer API
-    description: >-
-      The Cloud Composer API manages Apache Airflow environments on Google Cloud Platform. It provides methods to
-      create, update, delete, and manage Composer environments, check available image versions, and monitor long-running
-      operations.
-    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
-    humanURL: https://cloud.google.com/composer/docs
-    baseURL: https://composer.googleapis.com
-    tags:
-      - Airflow
-      - Environments
-      - Workflow Orchestration
-    properties:
-      - type: Documentation
-        url: https://cloud.google.com/composer/docs/reference/rest
-      - type: OpenAPI
-        url: openapi/google-cloud-composer-openapi.yml
-      - type: Authentication
-        url: https://cloud.google.com/docs/authentication
-      - type: GettingStarted
-        url: https://cloud.google.com/composer/docs/quickstart
-      - type: JSONSchema
-        url: json-schema/google-cloud-composer-environment-schema.json
+- aid: google-cloud-composer:google-cloud-composer-environments-api
+  name: Google Cloud Composer Environments API
+  description: Operations for managing Composer environments
+  humanURL: https://cloud.google.com/composer/docs
+  baseURL: https://composer.googleapis.com
+  tags:
+  - Environments
+  properties:
+  - type: OpenAPI
+    url: openapi/google-cloud-composer-environments-api-openapi.yml
+  - type: Documentation
+    url: https://cloud.google.com/composer/docs/reference/rest
+  - type: Authentication
+    url: https://cloud.google.com/docs/authentication
+  - type: GettingStarted
+    url: https://cloud.google.com/composer/docs/quickstart
+  - type: JSONSchema
+    url: json-schema/google-cloud-composer-environment-schema.json
+- aid: google-cloud-composer:google-cloud-composer-imageversions-api
+  name: Google Cloud Composer ImageVersions API
+  description: Operations for listing available image versions
+  humanURL: https://cloud.google.com/composer/docs
+  baseURL: https://composer.googleapis.com
+  tags:
+  - ImageVersions
+  properties:
+  - type: OpenAPI
+    url: openapi/google-cloud-composer-imageversions-api-openapi.yml
+  - type: Documentation
+    url: https://cloud.google.com/composer/docs/reference/rest
+  - type: Authentication
+    url: https://cloud.google.com/docs/authentication
+  - type: GettingStarted
+    url: https://cloud.google.com/composer/docs/quickstart
+  - type: JSONSchema
+    url: json-schema/google-cloud-composer-environment-schema.json
+- aid: google-cloud-composer:google-cloud-composer-operations-api
+  name: Google Cloud Composer Operations API
+  description: Long-running operation management
+  humanURL: https://cloud.google.com/composer/docs
+  baseURL: https://composer.googleapis.com
+  tags:
+  - Operations
+  properties:
+  - type: OpenAPI
+    url: openapi/google-cloud-composer-operations-api-openapi.yml
+  - type: Documentation
+    url: https://cloud.google.com/composer/docs/reference/rest
+  - type: Authentication
+    url: https://cloud.google.com/docs/authentication
+  - type: GettingStarted
+    url: https://cloud.google.com/composer/docs/quickstart
+  - type: JSONSchema
+    url: json-schema/google-cloud-composer-environment-schema.json
 common:
+  - type: PostmanWorkspace
+    url: https://www.postman.com/kinlaneapi/google-cloud-composer/overview
   - type: AgenticAccess
     url: agentic-access/google-cloud-composer-agentic-access.yml
   - type: VulnerabilityDisclosure
