@@ -1,0 +1,18 @@
+{
+  "provider": "google-cloud-composer",
+  "sources": [
+    "google-cloud-composer-environments-api-openapi.yml",
+    "google-cloud-composer-imageversions-api-openapi.yml",
+    "google-cloud-composer-operations-api-openapi.yml"
+  ],
+  "outputs": [
+    "google-cloud-composer-environments-api-openapi.yml",
+    "google-cloud-composer-imageversions-api-openapi.yml",
+    "google-cloud-composer-operations-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}

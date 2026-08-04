@@ -1,0 +1,213 @@
+{
+  "info": {
+    "_postman_id": "733de26a-5dd7-46cc-803f-51fc86ce4534",
+    "name": "Google Cloud Composer Environments ImageVersions API",
+    "description": "The Cloud Composer API manages Apache Airflow environments on Google Cloud Platform. It provides methods to create, update, and delete environments, query available image versions, and monitor long-running operations.\n\nContact Support:\n Name: Google Cloud",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T01:46:32.000Z",
+    "updatedAt": "2026-07-28T01:46:32.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-733de26a-5dd7-46cc-803f-51fc86ce4534"
+  },
+  "item": [
+    {
+      "name": "projects",
+      "item": [
+        {
+          "name": "{projectId}",
+          "item": [
+            {
+              "name": "locations",
+              "item": [
+                {
+                  "name": "{location}",
+                  "item": [
+                    {
+                      "name": "imageVersions",
+                      "item": [
+                        {
+                          "name": "Google Cloud Composer List image versions",
+                          "id": "339c96b7-efcb-44f3-937c-0b400ef69c37",
+                          "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                          },
+                          "request": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/projects/:projectId/locations/:location/imageVersions?pageSize=<integer>&pageToken=<string>",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "projects",
+                                ":projectId",
+                                "locations",
+                                ":location",
+                                "imageVersions"
+                              ],
+                              "query": [
+                                {
+                                  "key": "pageSize",
+                                  "value": "<integer>"
+                                },
+                                {
+                                  "key": "pageToken",
+                                  "value": "<string>"
+                                }
+                              ],
+                              "variable": [
+                                {
+                                  "id": "db8d8c85-d02e-4890-892e-b1d234ed44a5",
+                                  "key": "projectId",
+                                  "value": "<string>",
+                                  "description": "(Required) "
+                                },
+                                {
+                                  "id": "14f19d64-6c33-4a13-8fe3-04ddfe6a69e3",
+                                  "key": "location",
+                                  "value": "<string>",
+                                  "description": "(Required) "
+                                }
+                              ]
+                            },
+                            "description": "Lists available image versions for Composer environments."
+                          },
+                          "response": [
+                            {
+                              "id": "64fe8071-dfd6-4b6e-9665-a500d99e9321",
+                              "name": "Successful response",
+                              "originalRequest": {
+                                "method": "GET",
+                                "header": [
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: oauth2",
+                                    "key": "Authorization",
+                                    "value": "<token>"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/projects/:projectId/locations/:location/imageVersions?pageSize=<integer>&pageToken=<string>",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "projects",
+                                    ":projectId",
+                                    "locations",
+                                    ":location",
+                                    "imageVersions"
+                                  ],
+                                  "query": [
+                                    {
+                                      "key": "pageSize",
+                                      "value": "<integer>"
+                                    },
+                                    {
+                                      "key": "pageToken",
+                                      "value": "<string>"
+                                    }
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "projectId"
+                                    },
+                                    {
+                                      "key": "location"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "OK",
+                              "code": 200,
+                              "_postman_previewlanguage": "json",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/json"
+                                }
+                              ],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": "{\n  \"imageVersions\": [\n    {\n      \"imageVersionId\": \"<string>\",\n      \"isDefault\": \"<boolean>\",\n      \"supportedPythonVersions\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"releaseDate\": {\n        \"year\": \"<integer>\",\n        \"month\": \"<integer>\",\n        \"day\": \"<integer>\"\n      },\n      \"creationDisabled\": \"<boolean>\",\n      \"upgradeDisabled\": \"<boolean>\"\n    },\n    {\n      \"imageVersionId\": \"<string>\",\n      \"isDefault\": \"<boolean>\",\n      \"supportedPythonVersions\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"releaseDate\": {\n        \"year\": \"<integer>\",\n        \"month\": \"<integer>\",\n        \"day\": \"<integer>\"\n      },\n      \"creationDisabled\": \"<boolean>\",\n      \"upgradeDisabled\": \"<boolean>\"\n    }\n  ],\n  \"nextPageToken\": \"<string>\"\n}",
+                              "createdAt": "2026-07-28T01:46:32.000Z",
+                              "updatedAt": "2026-07-28T01:46:32.000Z",
+                              "uid": "35240-64fe8071-dfd6-4b6e-9665-a500d99e9321"
+                            }
+                          ],
+                          "createdAt": "2026-07-28T01:46:32.000Z",
+                          "updatedAt": "2026-07-28T01:46:32.000Z",
+                          "uid": "35240-339c96b7-efcb-44f3-937c-0b400ef69c37"
+                        }
+                      ],
+                      "id": "921bed33-d295-46b8-82c6-bb9a7e83db7a",
+                      "createdAt": "2026-07-28T01:46:32.000Z",
+                      "updatedAt": "2026-07-28T01:46:32.000Z",
+                      "uid": "35240-921bed33-d295-46b8-82c6-bb9a7e83db7a"
+                    }
+                  ],
+                  "id": "c8211e45-f279-4875-bc5c-a0c9aa27041c",
+                  "createdAt": "2026-07-28T01:46:32.000Z",
+                  "updatedAt": "2026-07-28T01:46:32.000Z",
+                  "uid": "35240-c8211e45-f279-4875-bc5c-a0c9aa27041c"
+                }
+              ],
+              "id": "f6b217a8-a53f-431d-ad82-40129bf28116",
+              "createdAt": "2026-07-28T01:46:32.000Z",
+              "updatedAt": "2026-07-28T01:46:32.000Z",
+              "uid": "35240-f6b217a8-a53f-431d-ad82-40129bf28116"
+            }
+          ],
+          "id": "1b73a091-7e8a-4d29-8ecd-aabb3fbfadd2",
+          "createdAt": "2026-07-28T01:46:32.000Z",
+          "updatedAt": "2026-07-28T01:46:32.000Z",
+          "uid": "35240-1b73a091-7e8a-4d29-8ecd-aabb3fbfadd2"
+        }
+      ],
+      "id": "a29f02cc-6581-4c91-9a77-edfbe58bf831",
+      "createdAt": "2026-07-28T01:46:32.000Z",
+      "updatedAt": "2026-07-28T01:46:32.000Z",
+      "uid": "35240-a29f02cc-6581-4c91-9a77-edfbe58bf831"
+    }
+  ],
+  "auth": {
+    "type": "oauth2",
+    "oauth2": [
+      {
+        "key": "scope",
+        "value": "https://www.googleapis.com/auth/cloud-platform",
+        "type": "string"
+      },
+      {
+        "key": "accessTokenUrl",
+        "value": "https://oauth2.googleapis.com/token",
+        "type": "string"
+      },
+      {
+        "key": "authUrl",
+        "value": "https://accounts.google.com/o/oauth2/auth",
+        "type": "string"
+      },
+      {
+        "key": "grant_type",
+        "value": "authorization_code",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://composer.googleapis.com/v1"
+    }
+  ]
+}

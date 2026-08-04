@@ -1,0 +1,735 @@
+{
+  "info": {
+    "_postman_id": "f5a28d96-0a2f-432d-bdb8-1540a35d8264",
+    "name": "Google Cloud Composer Environments API",
+    "description": "The Cloud Composer API manages Apache Airflow environments on Google Cloud Platform. It provides methods to create, update, and delete environments, query available image versions, and monitor long-running operations.\n\nContact Support:\n Name: Google Cloud",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T01:46:31.000Z",
+    "updatedAt": "2026-07-28T01:46:31.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-f5a28d96-0a2f-432d-bdb8-1540a35d8264"
+  },
+  "item": [
+    {
+      "name": "projects",
+      "item": [
+        {
+          "name": "{projectId}",
+          "item": [
+            {
+              "name": "locations",
+              "item": [
+                {
+                  "name": "{location}",
+                  "item": [
+                    {
+                      "name": "environments",
+                      "item": [
+                        {
+                          "name": "{environmentId}",
+                          "item": [
+                            {
+                              "name": "Google Cloud Composer Get a Composer environment",
+                              "id": "25f29913-6fd8-45f4-8c27-5bc49d1a6825",
+                              "protocolProfileBehavior": {
+                                "disableBodyPruning": true
+                              },
+                              "request": {
+                                "method": "GET",
+                                "header": [
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/projects/:projectId/locations/:location/environments/:environmentId",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "projects",
+                                    ":projectId",
+                                    "locations",
+                                    ":location",
+                                    "environments",
+                                    ":environmentId"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "id": "34782abc-4b30-43ad-b3c2-0d09fa8cc896",
+                                      "key": "projectId",
+                                      "value": "<string>",
+                                      "description": "(Required) "
+                                    },
+                                    {
+                                      "id": "e6f1e29a-b45e-429f-871c-05f28201afa3",
+                                      "key": "location",
+                                      "value": "<string>",
+                                      "description": "(Required) "
+                                    },
+                                    {
+                                      "id": "5aa636e6-c785-41a1-a67d-d75b447c01d9",
+                                      "key": "environmentId",
+                                      "value": "<string>",
+                                      "description": "(Required) "
+                                    }
+                                  ]
+                                },
+                                "description": "Gets an existing Composer environment."
+                              },
+                              "response": [
+                                {
+                                  "id": "bf1da784-d06c-4b5b-8ca2-8b643768fc72",
+                                  "name": "Successful response",
+                                  "originalRequest": {
+                                    "method": "GET",
+                                    "header": [
+                                      {
+                                        "key": "Accept",
+                                        "value": "application/json"
+                                      },
+                                      {
+                                        "description": "Added as a part of security scheme: oauth2",
+                                        "key": "Authorization",
+                                        "value": "<token>"
+                                      }
+                                    ],
+                                    "url": {
+                                      "raw": "{{baseUrl}}/projects/:projectId/locations/:location/environments/:environmentId",
+                                      "host": [
+                                        "{{baseUrl}}"
+                                      ],
+                                      "path": [
+                                        "projects",
+                                        ":projectId",
+                                        "locations",
+                                        ":location",
+                                        "environments",
+                                        ":environmentId"
+                                      ],
+                                      "variable": [
+                                        {
+                                          "key": "projectId"
+                                        },
+                                        {
+                                          "key": "location"
+                                        },
+                                        {
+                                          "key": "environmentId"
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  "status": "OK",
+                                  "code": 200,
+                                  "_postman_previewlanguage": "json",
+                                  "header": [
+                                    {
+                                      "key": "Content-Type",
+                                      "value": "application/json"
+                                    }
+                                  ],
+                                  "cookie": [],
+                                  "responseTime": null,
+                                  "body": "{\n  \"name\": \"<string>\",\n  \"config\": {\n    \"gkeCluster\": \"<string>\",\n    \"dagGcsPrefix\": \"<string>\",\n    \"nodeCount\": \"<integer>\",\n    \"softwareConfig\": {\n      \"imageVersion\": \"<string>\",\n      \"airflowConfigOverrides\": {\n        \"anim4\": \"<string>\"\n      },\n      \"pypiPackages\": {\n        \"ex5ce\": \"<string>\",\n        \"reprehenderit_264\": \"<string>\"\n      },\n      \"envVariables\": {\n        \"ullamco3\": \"<string>\",\n        \"Ut_6\": \"<string>\",\n        \"sunt9\": \"<string>\",\n        \"anim_d\": \"<string>\"\n      },\n      \"pythonVersion\": \"<string>\"\n    },\n    \"nodeConfig\": {\n      \"location\": \"<string>\",\n      \"machineType\": \"<string>\",\n      \"network\": \"<string>\",\n      \"subnetwork\": \"<string>\",\n      \"diskSizeGb\": \"<integer>\",\n      \"oauthScopes\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"serviceAccount\": \"<string>\",\n      \"tags\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    },\n    \"privateEnvironmentConfig\": {\n      \"enablePrivateEnvironment\": \"<boolean>\",\n      \"privateClusterConfig\": {\n        \"enablePrivateEndpoint\": \"<boolean>\",\n        \"masterIpv4CidrBlock\": \"<string>\"\n      }\n    },\n    \"webServerNetworkAccessControl\": {\n      \"allowedIpRanges\": [\n        {\n          \"value\": \"<string>\",\n          \"description\": \"<string>\"\n        },\n        {\n          \"value\": \"<string>\",\n          \"description\": \"<string>\"\n        }\n      ]\n    },\n    \"environmentSize\": \"ENVIRONMENT_SIZE_LARGE\",\n    \"airflowUri\": \"<string>\"\n  },\n  \"uuid\": \"<string>\",\n  \"state\": \"RUNNING\",\n  \"createTime\": \"<dateTime>\",\n  \"updateTime\": \"<dateTime>\",\n  \"labels\": {\n    \"sed_74a\": \"<string>\"\n  }\n}",
+                                  "createdAt": "2026-07-28T01:46:31.000Z",
+                                  "updatedAt": "2026-07-28T01:46:31.000Z",
+                                  "uid": "35240-bf1da784-d06c-4b5b-8ca2-8b643768fc72"
+                                }
+                              ],
+                              "createdAt": "2026-07-28T01:46:31.000Z",
+                              "updatedAt": "2026-07-28T01:46:31.000Z",
+                              "uid": "35240-25f29913-6fd8-45f4-8c27-5bc49d1a6825"
+                            },
+                            {
+                              "name": "Google Cloud Composer Update a Composer environment",
+                              "id": "3da3b5a1-85eb-4bf7-82fb-4fb529208351",
+                              "protocolProfileBehavior": {
+                                "disableBodyPruning": true
+                              },
+                              "request": {
+                                "method": "PATCH",
+                                "header": [
+                                  {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  }
+                                ],
+                                "body": {
+                                  "mode": "raw",
+                                  "raw": "{\n  \"name\": \"<string>\",\n  \"config\": {\n    \"gkeCluster\": \"<string>\",\n    \"dagGcsPrefix\": \"<string>\",\n    \"nodeCount\": \"<integer>\",\n    \"softwareConfig\": {\n      \"imageVersion\": \"<string>\",\n      \"airflowConfigOverrides\": {\n        \"anim4\": \"<string>\"\n      },\n      \"pypiPackages\": {\n        \"ex5ce\": \"<string>\",\n        \"reprehenderit_264\": \"<string>\"\n      },\n      \"envVariables\": {\n        \"ullamco3\": \"<string>\",\n        \"Ut_6\": \"<string>\",\n        \"sunt9\": \"<string>\",\n        \"anim_d\": \"<string>\"\n      },\n      \"pythonVersion\": \"<string>\"\n    },\n    \"nodeConfig\": {\n      \"location\": \"<string>\",\n      \"machineType\": \"<string>\",\n      \"network\": \"<string>\",\n      \"subnetwork\": \"<string>\",\n      \"diskSizeGb\": \"<integer>\",\n      \"oauthScopes\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"serviceAccount\": \"<string>\",\n      \"tags\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    },\n    \"privateEnvironmentConfig\": {\n      \"enablePrivateEnvironment\": \"<boolean>\",\n      \"privateClusterConfig\": {\n        \"enablePrivateEndpoint\": \"<boolean>\",\n        \"masterIpv4CidrBlock\": \"<string>\"\n      }\n    },\n    \"webServerNetworkAccessControl\": {\n      \"allowedIpRanges\": [\n        {\n          \"value\": \"<string>\",\n          \"description\": \"<string>\"\n        },\n        {\n          \"value\": \"<string>\",\n          \"description\": \"<string>\"\n        }\n      ]\n    },\n    \"environmentSize\": \"ENVIRONMENT_SIZE_LARGE\",\n    \"airflowUri\": \"<string>\"\n  },\n  \"uuid\": \"<string>\",\n  \"state\": \"RUNNING\",\n  \"createTime\": \"<dateTime>\",\n  \"updateTime\": \"<dateTime>\",\n  \"labels\": {\n    \"sed_74a\": \"<string>\"\n  }\n}",
+                                  "options": {
+                                    "raw": {
+                                      "headerFamily": "json",
+                                      "language": "json"
+                                    }
+                                  }
+                                },
+                                "url": {
+                                  "raw": "{{baseUrl}}/projects/:projectId/locations/:location/environments/:environmentId?updateMask=<string>",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "projects",
+                                    ":projectId",
+                                    "locations",
+                                    ":location",
+                                    "environments",
+                                    ":environmentId"
+                                  ],
+                                  "query": [
+                                    {
+                                      "key": "updateMask",
+                                      "value": "<string>"
+                                    }
+                                  ],
+                                  "variable": [
+                                    {
+                                      "id": "9ded04c7-9d27-4042-b5f2-be2e66c2dc50",
+                                      "key": "projectId",
+                                      "value": "<string>",
+                                      "description": "(Required) "
+                                    },
+                                    {
+                                      "id": "f2cd168b-4fe0-4d60-9e10-ec0e58888956",
+                                      "key": "location",
+                                      "value": "<string>",
+                                      "description": "(Required) "
+                                    },
+                                    {
+                                      "id": "fea536a7-bae5-4e58-8cde-aee0678f44a9",
+                                      "key": "environmentId",
+                                      "value": "<string>",
+                                      "description": "(Required) "
+                                    }
+                                  ]
+                                },
+                                "description": "Updates an existing Composer environment."
+                              },
+                              "response": [
+                                {
+                                  "id": "975d5325-67e6-40c8-90de-cb41771f8a05",
+                                  "name": "Successful response with long-running operation",
+                                  "originalRequest": {
+                                    "method": "PATCH",
+                                    "header": [
+                                      {
+                                        "key": "Content-Type",
+                                        "value": "application/json"
+                                      },
+                                      {
+                                        "key": "Accept",
+                                        "value": "application/json"
+                                      },
+                                      {
+                                        "description": "Added as a part of security scheme: oauth2",
+                                        "key": "Authorization",
+                                        "value": "<token>"
+                                      }
+                                    ],
+                                    "body": {
+                                      "mode": "raw",
+                                      "raw": "{\n  \"name\": \"<string>\",\n  \"config\": {\n    \"gkeCluster\": \"<string>\",\n    \"dagGcsPrefix\": \"<string>\",\n    \"nodeCount\": \"<integer>\",\n    \"softwareConfig\": {\n      \"imageVersion\": \"<string>\",\n      \"airflowConfigOverrides\": {\n        \"anim4\": \"<string>\"\n      },\n      \"pypiPackages\": {\n        \"ex5ce\": \"<string>\",\n        \"reprehenderit_264\": \"<string>\"\n      },\n      \"envVariables\": {\n        \"ullamco3\": \"<string>\",\n        \"Ut_6\": \"<string>\",\n        \"sunt9\": \"<string>\",\n        \"anim_d\": \"<string>\"\n      },\n      \"pythonVersion\": \"<string>\"\n    },\n    \"nodeConfig\": {\n      \"location\": \"<string>\",\n      \"machineType\": \"<string>\",\n      \"network\": \"<string>\",\n      \"subnetwork\": \"<string>\",\n      \"diskSizeGb\": \"<integer>\",\n      \"oauthScopes\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"serviceAccount\": \"<string>\",\n      \"tags\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    },\n    \"privateEnvironmentConfig\": {\n      \"enablePrivateEnvironment\": \"<boolean>\",\n      \"privateClusterConfig\": {\n        \"enablePrivateEndpoint\": \"<boolean>\",\n        \"masterIpv4CidrBlock\": \"<string>\"\n      }\n    },\n    \"webServerNetworkAccessControl\": {\n      \"allowedIpRanges\": [\n        {\n          \"value\": \"<string>\",\n          \"description\": \"<string>\"\n        },\n        {\n          \"value\": \"<string>\",\n          \"description\": \"<string>\"\n        }\n      ]\n    },\n    \"environmentSize\": \"ENVIRONMENT_SIZE_LARGE\",\n    \"airflowUri\": \"<string>\"\n  },\n  \"uuid\": \"<string>\",\n  \"state\": \"RUNNING\",\n  \"createTime\": \"<dateTime>\",\n  \"updateTime\": \"<dateTime>\",\n  \"labels\": {\n    \"sed_74a\": \"<string>\"\n  }\n}",
+                                      "options": {
+                                        "raw": {
+                                          "headerFamily": "json",
+                                          "language": "json"
+                                        }
+                                      }
+                                    },
+                                    "url": {
+                                      "raw": "{{baseUrl}}/projects/:projectId/locations/:location/environments/:environmentId?updateMask=<string>",
+                                      "host": [
+                                        "{{baseUrl}}"
+                                      ],
+                                      "path": [
+                                        "projects",
+                                        ":projectId",
+                                        "locations",
+                                        ":location",
+                                        "environments",
+                                        ":environmentId"
+                                      ],
+                                      "query": [
+                                        {
+                                          "key": "updateMask",
+                                          "value": "<string>"
+                                        }
+                                      ],
+                                      "variable": [
+                                        {
+                                          "key": "projectId"
+                                        },
+                                        {
+                                          "key": "location"
+                                        },
+                                        {
+                                          "key": "environmentId"
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  "status": "OK",
+                                  "code": 200,
+                                  "_postman_previewlanguage": "json",
+                                  "header": [
+                                    {
+                                      "key": "Content-Type",
+                                      "value": "application/json"
+                                    }
+                                  ],
+                                  "cookie": [],
+                                  "responseTime": null,
+                                  "body": "{\n  \"name\": \"<string>\",\n  \"metadata\": {},\n  \"done\": \"<boolean>\",\n  \"error\": {\n    \"code\": \"<integer>\",\n    \"message\": \"<string>\"\n  },\n  \"response\": {}\n}",
+                                  "createdAt": "2026-07-28T01:46:31.000Z",
+                                  "updatedAt": "2026-07-28T01:46:31.000Z",
+                                  "uid": "35240-975d5325-67e6-40c8-90de-cb41771f8a05"
+                                }
+                              ],
+                              "createdAt": "2026-07-28T01:46:31.000Z",
+                              "updatedAt": "2026-07-28T01:46:31.000Z",
+                              "uid": "35240-3da3b5a1-85eb-4bf7-82fb-4fb529208351"
+                            },
+                            {
+                              "name": "Google Cloud Composer Delete a Composer environment",
+                              "id": "656ccdc9-9a64-488b-8059-61a1855b3dd8",
+                              "protocolProfileBehavior": {
+                                "disableBodyPruning": true
+                              },
+                              "request": {
+                                "method": "DELETE",
+                                "header": [
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/projects/:projectId/locations/:location/environments/:environmentId",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "projects",
+                                    ":projectId",
+                                    "locations",
+                                    ":location",
+                                    "environments",
+                                    ":environmentId"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "id": "122e59f2-df57-4340-837f-03adf2d87c31",
+                                      "key": "projectId",
+                                      "value": "<string>",
+                                      "description": "(Required) "
+                                    },
+                                    {
+                                      "id": "e11efebe-cc6c-468d-8dfa-917cf7667d2d",
+                                      "key": "location",
+                                      "value": "<string>",
+                                      "description": "(Required) "
+                                    },
+                                    {
+                                      "id": "411fcc28-5451-4bdd-a79d-7762fad0f873",
+                                      "key": "environmentId",
+                                      "value": "<string>",
+                                      "description": "(Required) "
+                                    }
+                                  ]
+                                },
+                                "description": "Deletes an existing Composer environment."
+                              },
+                              "response": [
+                                {
+                                  "id": "b765c6c0-a61e-44f8-bfc3-b851ec21d4ac",
+                                  "name": "Successful response with long-running operation",
+                                  "originalRequest": {
+                                    "method": "DELETE",
+                                    "header": [
+                                      {
+                                        "key": "Accept",
+                                        "value": "application/json"
+                                      },
+                                      {
+                                        "description": "Added as a part of security scheme: oauth2",
+                                        "key": "Authorization",
+                                        "value": "<token>"
+                                      }
+                                    ],
+                                    "url": {
+                                      "raw": "{{baseUrl}}/projects/:projectId/locations/:location/environments/:environmentId",
+                                      "host": [
+                                        "{{baseUrl}}"
+                                      ],
+                                      "path": [
+                                        "projects",
+                                        ":projectId",
+                                        "locations",
+                                        ":location",
+                                        "environments",
+                                        ":environmentId"
+                                      ],
+                                      "variable": [
+                                        {
+                                          "key": "projectId"
+                                        },
+                                        {
+                                          "key": "location"
+                                        },
+                                        {
+                                          "key": "environmentId"
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  "status": "OK",
+                                  "code": 200,
+                                  "_postman_previewlanguage": "json",
+                                  "header": [
+                                    {
+                                      "key": "Content-Type",
+                                      "value": "application/json"
+                                    }
+                                  ],
+                                  "cookie": [],
+                                  "responseTime": null,
+                                  "body": "{\n  \"name\": \"<string>\",\n  \"metadata\": {},\n  \"done\": \"<boolean>\",\n  \"error\": {\n    \"code\": \"<integer>\",\n    \"message\": \"<string>\"\n  },\n  \"response\": {}\n}",
+                                  "createdAt": "2026-07-28T01:46:31.000Z",
+                                  "updatedAt": "2026-07-28T01:46:31.000Z",
+                                  "uid": "35240-b765c6c0-a61e-44f8-bfc3-b851ec21d4ac"
+                                }
+                              ],
+                              "createdAt": "2026-07-28T01:46:31.000Z",
+                              "updatedAt": "2026-07-28T01:46:31.000Z",
+                              "uid": "35240-656ccdc9-9a64-488b-8059-61a1855b3dd8"
+                            }
+                          ],
+                          "id": "aa5daf68-1df3-48a6-be48-d5579546beec",
+                          "createdAt": "2026-07-28T01:46:31.000Z",
+                          "updatedAt": "2026-07-28T01:46:31.000Z",
+                          "uid": "35240-aa5daf68-1df3-48a6-be48-d5579546beec"
+                        },
+                        {
+                          "name": "Google Cloud Composer List Composer environments",
+                          "id": "6433ffa5-1b4a-4957-b593-0867dade6ae6",
+                          "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                          },
+                          "request": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/projects/:projectId/locations/:location/environments?pageSize=<integer>&pageToken=<string>",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "projects",
+                                ":projectId",
+                                "locations",
+                                ":location",
+                                "environments"
+                              ],
+                              "query": [
+                                {
+                                  "key": "pageSize",
+                                  "value": "<integer>"
+                                },
+                                {
+                                  "key": "pageToken",
+                                  "value": "<string>"
+                                }
+                              ],
+                              "variable": [
+                                {
+                                  "id": "1a8944c3-cf78-4cd3-ab63-f83cb6d764e5",
+                                  "key": "projectId",
+                                  "value": "<string>",
+                                  "description": "(Required) "
+                                },
+                                {
+                                  "id": "f89e31d1-20b0-4cdd-bc31-da749f753a5d",
+                                  "key": "location",
+                                  "value": "<string>",
+                                  "description": "(Required) "
+                                }
+                              ]
+                            },
+                            "description": "Lists environments in the specified project and location."
+                          },
+                          "response": [
+                            {
+                              "id": "a6c04cf6-1fe0-435b-8910-cff6b29ce5ab",
+                              "name": "Successful response",
+                              "originalRequest": {
+                                "method": "GET",
+                                "header": [
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: oauth2",
+                                    "key": "Authorization",
+                                    "value": "<token>"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/projects/:projectId/locations/:location/environments?pageSize=<integer>&pageToken=<string>",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "projects",
+                                    ":projectId",
+                                    "locations",
+                                    ":location",
+                                    "environments"
+                                  ],
+                                  "query": [
+                                    {
+                                      "key": "pageSize",
+                                      "value": "<integer>"
+                                    },
+                                    {
+                                      "key": "pageToken",
+                                      "value": "<string>"
+                                    }
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "projectId"
+                                    },
+                                    {
+                                      "key": "location"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "OK",
+                              "code": 200,
+                              "_postman_previewlanguage": "json",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/json"
+                                }
+                              ],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": "{\n  \"environments\": [\n    {\n      \"name\": \"<string>\",\n      \"config\": {\n        \"gkeCluster\": \"<string>\",\n        \"dagGcsPrefix\": \"<string>\",\n        \"nodeCount\": \"<integer>\",\n        \"softwareConfig\": {\n          \"imageVersion\": \"<string>\",\n          \"airflowConfigOverrides\": {\n            \"quis_8a2\": \"<string>\",\n            \"aute_e5\": \"<string>\",\n            \"aliqua_6\": \"<string>\",\n            \"incididunt_0\": \"<string>\"\n          },\n          \"pypiPackages\": {\n            \"sint_cf\": \"<string>\",\n            \"ut_26e\": \"<string>\",\n            \"utde\": \"<string>\"\n          },\n          \"envVariables\": {\n            \"ipsumb6d\": \"<string>\",\n            \"ex_fb\": \"<string>\",\n            \"minimbb\": \"<string>\"\n          },\n          \"pythonVersion\": \"<string>\"\n        },\n        \"nodeConfig\": {\n          \"location\": \"<string>\",\n          \"machineType\": \"<string>\",\n          \"network\": \"<string>\",\n          \"subnetwork\": \"<string>\",\n          \"diskSizeGb\": \"<integer>\",\n          \"oauthScopes\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"serviceAccount\": \"<string>\",\n          \"tags\": [\n            \"<string>\",\n            \"<string>\"\n          ]\n        },\n        \"privateEnvironmentConfig\": {\n          \"enablePrivateEnvironment\": \"<boolean>\",\n          \"privateClusterConfig\": {\n            \"enablePrivateEndpoint\": \"<boolean>\",\n            \"masterIpv4CidrBlock\": \"<string>\"\n          }\n        },\n        \"webServerNetworkAccessControl\": {\n          \"allowedIpRanges\": [\n            {\n              \"value\": \"<string>\",\n              \"description\": \"<string>\"\n            },\n            {\n              \"value\": \"<string>\",\n              \"description\": \"<string>\"\n            }\n          ]\n        },\n        \"environmentSize\": \"ENVIRONMENT_SIZE_MEDIUM\",\n        \"airflowUri\": \"<string>\"\n      },\n      \"uuid\": \"<string>\",\n      \"state\": \"RUNNING\",\n      \"createTime\": \"<dateTime>\",\n      \"updateTime\": \"<dateTime>\",\n      \"labels\": {\n        \"occaecatef\": \"<string>\",\n        \"officiab\": \"<string>\",\n        \"dob5\": \"<string>\",\n        \"est_8\": \"<string>\"\n      }\n    },\n    {\n      \"name\": \"<string>\",\n      \"config\": {\n        \"gkeCluster\": \"<string>\",\n        \"dagGcsPrefix\": \"<string>\",\n        \"nodeCount\": \"<integer>\",\n        \"softwareConfig\": {\n          \"imageVersion\": \"<string>\",\n          \"airflowConfigOverrides\": {\n            \"in7e\": \"<string>\",\n            \"enim_9b_\": \"<string>\"\n          },\n          \"pypiPackages\": {\n            \"exercitationb\": \"<string>\",\n            \"mollit9\": \"<string>\",\n            \"dolor_0\": \"<string>\"\n          },\n          \"envVariables\": {\n            \"nulla_a16\": \"<string>\",\n            \"dolor__f\": \"<string>\",\n            \"amet163\": \"<string>\"\n          },\n          \"pythonVersion\": \"<string>\"\n        },\n        \"nodeConfig\": {\n          \"location\": \"<string>\",\n          \"machineType\": \"<string>\",\n          \"network\": \"<string>\",\n          \"subnetwork\": \"<string>\",\n          \"diskSizeGb\": \"<integer>\",\n          \"oauthScopes\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"serviceAccount\": \"<string>\",\n          \"tags\": [\n            \"<string>\",\n            \"<string>\"\n          ]\n        },\n        \"privateEnvironmentConfig\": {\n          \"enablePrivateEnvironment\": \"<boolean>\",\n          \"privateClusterConfig\": {\n            \"enablePrivateEndpoint\": \"<boolean>\",\n            \"masterIpv4CidrBlock\": \"<string>\"\n          }\n        },\n        \"webServerNetworkAccessControl\": {\n          \"allowedIpRanges\": [\n            {\n              \"value\": \"<string>\",\n              \"description\": \"<string>\"\n            },\n            {\n              \"value\": \"<string>\",\n              \"description\": \"<string>\"\n            }\n          ]\n        },\n        \"environmentSize\": \"ENVIRONMENT_SIZE_MEDIUM\",\n        \"airflowUri\": \"<string>\"\n      },\n      \"uuid\": \"<string>\",\n      \"state\": \"STATE_UNSPECIFIED\",\n      \"createTime\": \"<dateTime>\",\n      \"updateTime\": \"<dateTime>\",\n      \"labels\": {\n        \"nostrud1_6\": \"<string>\"\n      }\n    }\n  ],\n  \"nextPageToken\": \"<string>\"\n}",
+                              "createdAt": "2026-07-28T01:46:31.000Z",
+                              "updatedAt": "2026-07-28T01:46:31.000Z",
+                              "uid": "35240-a6c04cf6-1fe0-435b-8910-cff6b29ce5ab"
+                            }
+                          ],
+                          "createdAt": "2026-07-28T01:46:31.000Z",
+                          "updatedAt": "2026-07-28T01:46:31.000Z",
+                          "uid": "35240-6433ffa5-1b4a-4957-b593-0867dade6ae6"
+                        },
+                        {
+                          "name": "Google Cloud Composer Create a Composer environment",
+                          "id": "c9d81937-4014-4ff6-ba05-7cec2c683d69",
+                          "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                          },
+                          "request": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"name\": \"<string>\",\n  \"config\": {\n    \"gkeCluster\": \"<string>\",\n    \"dagGcsPrefix\": \"<string>\",\n    \"nodeCount\": \"<integer>\",\n    \"softwareConfig\": {\n      \"imageVersion\": \"<string>\",\n      \"airflowConfigOverrides\": {\n        \"anim4\": \"<string>\"\n      },\n      \"pypiPackages\": {\n        \"ex5ce\": \"<string>\",\n        \"reprehenderit_264\": \"<string>\"\n      },\n      \"envVariables\": {\n        \"ullamco3\": \"<string>\",\n        \"Ut_6\": \"<string>\",\n        \"sunt9\": \"<string>\",\n        \"anim_d\": \"<string>\"\n      },\n      \"pythonVersion\": \"<string>\"\n    },\n    \"nodeConfig\": {\n      \"location\": \"<string>\",\n      \"machineType\": \"<string>\",\n      \"network\": \"<string>\",\n      \"subnetwork\": \"<string>\",\n      \"diskSizeGb\": \"<integer>\",\n      \"oauthScopes\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"serviceAccount\": \"<string>\",\n      \"tags\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    },\n    \"privateEnvironmentConfig\": {\n      \"enablePrivateEnvironment\": \"<boolean>\",\n      \"privateClusterConfig\": {\n        \"enablePrivateEndpoint\": \"<boolean>\",\n        \"masterIpv4CidrBlock\": \"<string>\"\n      }\n    },\n    \"webServerNetworkAccessControl\": {\n      \"allowedIpRanges\": [\n        {\n          \"value\": \"<string>\",\n          \"description\": \"<string>\"\n        },\n        {\n          \"value\": \"<string>\",\n          \"description\": \"<string>\"\n        }\n      ]\n    },\n    \"environmentSize\": \"ENVIRONMENT_SIZE_LARGE\",\n    \"airflowUri\": \"<string>\"\n  },\n  \"uuid\": \"<string>\",\n  \"state\": \"RUNNING\",\n  \"createTime\": \"<dateTime>\",\n  \"updateTime\": \"<dateTime>\",\n  \"labels\": {\n    \"sed_74a\": \"<string>\"\n  }\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/projects/:projectId/locations/:location/environments",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "projects",
+                                ":projectId",
+                                "locations",
+                                ":location",
+                                "environments"
+                              ],
+                              "variable": [
+                                {
+                                  "id": "85fb8508-7e86-491b-bac1-861817def9c5",
+                                  "key": "projectId",
+                                  "value": "<string>",
+                                  "description": "(Required) "
+                                },
+                                {
+                                  "id": "046e642d-c1aa-4466-853e-03d0368c58d3",
+                                  "key": "location",
+                                  "value": "<string>",
+                                  "description": "(Required) "
+                                }
+                              ]
+                            },
+                            "description": "Creates a new Composer environment."
+                          },
+                          "response": [
+                            {
+                              "id": "edfaa59a-4b6e-4cc3-8857-73dc265659a0",
+                              "name": "Successful response with long-running operation",
+                              "originalRequest": {
+                                "method": "POST",
+                                "header": [
+                                  {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: oauth2",
+                                    "key": "Authorization",
+                                    "value": "<token>"
+                                  }
+                                ],
+                                "body": {
+                                  "mode": "raw",
+                                  "raw": "{\n  \"name\": \"<string>\",\n  \"config\": {\n    \"gkeCluster\": \"<string>\",\n    \"dagGcsPrefix\": \"<string>\",\n    \"nodeCount\": \"<integer>\",\n    \"softwareConfig\": {\n      \"imageVersion\": \"<string>\",\n      \"airflowConfigOverrides\": {\n        \"anim4\": \"<string>\"\n      },\n      \"pypiPackages\": {\n        \"ex5ce\": \"<string>\",\n        \"reprehenderit_264\": \"<string>\"\n      },\n      \"envVariables\": {\n        \"ullamco3\": \"<string>\",\n        \"Ut_6\": \"<string>\",\n        \"sunt9\": \"<string>\",\n        \"anim_d\": \"<string>\"\n      },\n      \"pythonVersion\": \"<string>\"\n    },\n    \"nodeConfig\": {\n      \"location\": \"<string>\",\n      \"machineType\": \"<string>\",\n      \"network\": \"<string>\",\n      \"subnetwork\": \"<string>\",\n      \"diskSizeGb\": \"<integer>\",\n      \"oauthScopes\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"serviceAccount\": \"<string>\",\n      \"tags\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    },\n    \"privateEnvironmentConfig\": {\n      \"enablePrivateEnvironment\": \"<boolean>\",\n      \"privateClusterConfig\": {\n        \"enablePrivateEndpoint\": \"<boolean>\",\n        \"masterIpv4CidrBlock\": \"<string>\"\n      }\n    },\n    \"webServerNetworkAccessControl\": {\n      \"allowedIpRanges\": [\n        {\n          \"value\": \"<string>\",\n          \"description\": \"<string>\"\n        },\n        {\n          \"value\": \"<string>\",\n          \"description\": \"<string>\"\n        }\n      ]\n    },\n    \"environmentSize\": \"ENVIRONMENT_SIZE_LARGE\",\n    \"airflowUri\": \"<string>\"\n  },\n  \"uuid\": \"<string>\",\n  \"state\": \"RUNNING\",\n  \"createTime\": \"<dateTime>\",\n  \"updateTime\": \"<dateTime>\",\n  \"labels\": {\n    \"sed_74a\": \"<string>\"\n  }\n}",
+                                  "options": {
+                                    "raw": {
+                                      "headerFamily": "json",
+                                      "language": "json"
+                                    }
+                                  }
+                                },
+                                "url": {
+                                  "raw": "{{baseUrl}}/projects/:projectId/locations/:location/environments",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "projects",
+                                    ":projectId",
+                                    "locations",
+                                    ":location",
+                                    "environments"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "projectId"
+                                    },
+                                    {
+                                      "key": "location"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "OK",
+                              "code": 200,
+                              "_postman_previewlanguage": "json",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/json"
+                                }
+                              ],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": "{\n  \"name\": \"<string>\",\n  \"metadata\": {},\n  \"done\": \"<boolean>\",\n  \"error\": {\n    \"code\": \"<integer>\",\n    \"message\": \"<string>\"\n  },\n  \"response\": {}\n}",
+                              "createdAt": "2026-07-28T01:46:31.000Z",
+                              "updatedAt": "2026-07-28T01:46:31.000Z",
+                              "uid": "35240-edfaa59a-4b6e-4cc3-8857-73dc265659a0"
+                            }
+                          ],
+                          "createdAt": "2026-07-28T01:46:31.000Z",
+                          "updatedAt": "2026-07-28T01:46:31.000Z",
+                          "uid": "35240-c9d81937-4014-4ff6-ba05-7cec2c683d69"
+                        }
+                      ],
+                      "id": "4bef985d-153c-41c9-abef-bff4c0c490e6",
+                      "createdAt": "2026-07-28T01:46:31.000Z",
+                      "updatedAt": "2026-07-28T01:46:31.000Z",
+                      "uid": "35240-4bef985d-153c-41c9-abef-bff4c0c490e6"
+                    }
+                  ],
+                  "id": "605c48d0-f097-4020-a118-f20ecf59f57c",
+                  "createdAt": "2026-07-28T01:46:31.000Z",
+                  "updatedAt": "2026-07-28T01:46:31.000Z",
+                  "uid": "35240-605c48d0-f097-4020-a118-f20ecf59f57c"
+                }
+              ],
+              "id": "81fce1e4-0a3b-4729-9e1d-b6b3bbc7f168",
+              "createdAt": "2026-07-28T01:46:31.000Z",
+              "updatedAt": "2026-07-28T01:46:31.000Z",
+              "uid": "35240-81fce1e4-0a3b-4729-9e1d-b6b3bbc7f168"
+            }
+          ],
+          "id": "1c8c9535-cdf0-410a-ac96-ef7e541ddbfb",
+          "createdAt": "2026-07-28T01:46:31.000Z",
+          "updatedAt": "2026-07-28T01:46:31.000Z",
+          "uid": "35240-1c8c9535-cdf0-410a-ac96-ef7e541ddbfb"
+        }
+      ],
+      "id": "dc624727-de98-4055-b36e-7879f932f551",
+      "createdAt": "2026-07-28T01:46:31.000Z",
+      "updatedAt": "2026-07-28T01:46:31.000Z",
+      "uid": "35240-dc624727-de98-4055-b36e-7879f932f551"
+    }
+  ],
+  "auth": {
+    "type": "oauth2",
+    "oauth2": [
+      {
+        "key": "scope",
+        "value": "https://www.googleapis.com/auth/cloud-platform",
+        "type": "string"
+      },
+      {
+        "key": "accessTokenUrl",
+        "value": "https://oauth2.googleapis.com/token",
+        "type": "string"
+      },
+      {
+        "key": "authUrl",
+        "value": "https://accounts.google.com/o/oauth2/auth",
+        "type": "string"
+      },
+      {
+        "key": "grant_type",
+        "value": "authorization_code",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://composer.googleapis.com/v1"
+    }
+  ]
+}
