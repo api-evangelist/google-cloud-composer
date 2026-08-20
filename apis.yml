@@ -24,6 +24,11 @@ specificationVersion: '0.23'
 type: Index
 tags:
   - Apache Airflow
+  - Data Pipeline
+  - Google Cloud
+  - Workflow Orchestration
+tags_raw:
+  - Apache Airflow
   - Data Pipelines
   - Google Cloud
   - Workflow Orchestration
@@ -69,7 +74,8 @@ apis:
   description: Long-running operation management
   humanURL: https://cloud.google.com/composer/docs
   baseURL: https://composer.googleapis.com
-  tags:
+  tags: []
+  tags_raw:
   - Operations
   properties:
   - type: OpenAPI
