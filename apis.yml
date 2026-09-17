@@ -63,24 +63,6 @@ apis:
     url: https://cloud.google.com/composer/docs/quickstart
   - type: JSONSchema
     url: json-schema/google-cloud-composer-environment-schema.json
-- aid: google-cloud-composer:google-cloud-composer-imageversions-api
-  name: Google Cloud Composer ImageVersions API
-  description: Operations for listing available image versions
-  humanURL: https://cloud.google.com/composer/docs
-  baseURL: https://composer.googleapis.com
-  tags:
-  - ImageVersions
-  properties:
-  - type: OpenAPI
-    url: openapi/google-cloud-composer-imageversions-api-openapi.yml
-  - type: Documentation
-    url: https://cloud.google.com/composer/docs/reference/rest
-  - type: Authentication
-    url: https://cloud.google.com/docs/authentication
-  - type: GettingStarted
-    url: https://cloud.google.com/composer/docs/quickstart
-  - type: JSONSchema
-    url: json-schema/google-cloud-composer-environment-schema.json
 - aid: google-cloud-composer:google-cloud-composer-operations-api
   name: Google Cloud Composer Operations API
   description: Long-running operation management
@@ -92,6 +74,24 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/google-cloud-composer-operations-api-openapi.yml
+  - type: Documentation
+    url: https://cloud.google.com/composer/docs/reference/rest
+  - type: Authentication
+    url: https://cloud.google.com/docs/authentication
+  - type: GettingStarted
+    url: https://cloud.google.com/composer/docs/quickstart
+  - type: JSONSchema
+    url: json-schema/google-cloud-composer-environment-schema.json
+- aid: google-cloud-composer:google-cloud-composer-image-versions-api
+  name: Google Cloud Composer image versions API
+  description: Operations for listing available image versions
+  humanURL: https://cloud.google.com/composer/docs
+  baseURL: https://composer.googleapis.com
+  tags:
+  - image versions
+  properties:
+  - type: OpenAPI
+    url: openapi/google-cloud-composer-image-versions-api-openapi.yml
   - type: Documentation
     url: https://cloud.google.com/composer/docs/reference/rest
   - type: Authentication
