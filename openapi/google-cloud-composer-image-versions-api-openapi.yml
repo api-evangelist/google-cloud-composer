@@ -1,6 +1,6 @@
 openapi: 3.2.0
 info:
-  title: Google Cloud Composer Environments Image Versions API
+  title: Google Cloud Composer Image Versions API
   description: The Cloud Composer API manages Apache Airflow environments on Google Cloud Platform. It provides methods to create, update, and delete environments, query available image versions, and monitor long-running operations.
   version: v1
   contact:
@@ -15,7 +15,7 @@ servers:
 security:
 - oauth2: []
 tags:
-- name: ImageVersions
+- name: image versions
   description: Operations for listing available image versions
 paths:
   /projects/{projectId}/locations/{location}/imageVersions:
@@ -24,7 +24,7 @@ paths:
       summary: Google Cloud Composer List image versions
       description: Lists available image versions for Composer environments.
       tags:
-      - ImageVersions
+      - image versions
       parameters:
       - name: projectId
         in: path

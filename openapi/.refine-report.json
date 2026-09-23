@@ -1,23 +1,27 @@
 {
   "provider": "google-cloud-composer",
   "sources": [
-    "google-cloud-composer-environments-api-openapi.yml",
-    "google-cloud-composer-imageversions-api-openapi.yml",
-    "google-cloud-composer-operations-api-openapi.yml"
+    "_original/google-cloud-composer-openapi.yml"
   ],
   "outputs": [
     "google-cloud-composer-environments-api-openapi.yml",
     "google-cloud-composer-imageversions-api-openapi.yml",
     "google-cloud-composer-operations-api-openapi.yml"
   ],
-  "archived": [],
+  "archived": [
+    "deleted 1 superseded output(s) from the previous generation"
+  ],
   "errors": [],
   "warnings": [],
   "notes": [
-    "google-cloud-composer-environments-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
-    "google-cloud-composer-imageversions-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
-    "google-cloud-composer-operations-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
-    "apis.yml register: already-registered"
+    "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "google-cloud-composer-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "superseded outputs removed: google-cloud-composer-image-versions-api-openapi.yml",
+    "apis.yml register: written (+1 apis, 3 total)"
   ],
-  "skipped": []
+  "skipped": [
+    "google-cloud-composer-environments-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "google-cloud-composer-image-versions-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "google-cloud-composer-operations-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }
