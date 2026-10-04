@@ -90,6 +90,8 @@ apis:
   humanURL: https://cloud.google.com/composer/docs
   baseURL: https://composer.googleapis.com
   tags:
+  - ImageVersions
+  tags_raw:
   - image versions
   properties:
   - type: OpenAPI
@@ -103,6 +105,9 @@ apis:
   - type: JSONSchema
     url: json-schema/google-cloud-composer-environment-schema.json
 common:
+  - type: CapabilityMap
+    url: capabilities/google-cloud-composer-capability-edges.yml
+    name: Google Cloud Composer Business Capability Map
   - type: Website
     url: https://www.google.com/
   - type: PostmanWorkspace
