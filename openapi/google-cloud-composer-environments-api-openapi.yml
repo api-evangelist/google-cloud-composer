@@ -181,15 +181,6 @@ paths:
                 $ref: '#/components/schemas/Operation'
 components:
   schemas:
-    ListEnvironmentsResponse:
-      type: object
-      properties:
-        environments:
-          type: array
-          items:
-            $ref: '#/components/schemas/Environment'
-        nextPageToken:
-          type: string
     Environment:
       type: object
       properties:
@@ -326,6 +317,15 @@ components:
               type: string
         response:
           type: object
+    ListEnvironmentsResponse:
+      type: object
+      properties:
+        environments:
+          type: array
+          items:
+            $ref: '#/components/schemas/Environment'
+        nextPageToken:
+          type: string
   securitySchemes:
     oauth2:
       type: oauth2

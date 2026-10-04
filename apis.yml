@@ -90,8 +90,6 @@ apis:
   humanURL: https://cloud.google.com/composer/docs
   baseURL: https://composer.googleapis.com
   tags:
-  - ImageVersions
-  tags_raw:
   - image versions
   properties:
   - type: OpenAPI
