@@ -103,6 +103,12 @@ apis:
   - type: JSONSchema
     url: json-schema/google-cloud-composer-environment-schema.json
 common:
+  - type: Plans
+    url: plans/google-cloud-composer-plans-pricing.yml
+  - type: RateLimits
+    url: rate-limits/google-cloud-composer-rate-limits.yml
+  - type: FinOps
+    url: finops/google-cloud-composer-finops.yml
   - type: CapabilityMap
     url: capabilities/google-cloud-composer-capability-edges.yml
     name: Google Cloud Composer Business Capability Map
