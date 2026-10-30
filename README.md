@@ -1,4 +1,4 @@
-# Google Cloud Composer (google-cloud-composer)
+# Google Cloud Composer
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -66,65 +66,155 @@
 
 Google Cloud Composer is a fully managed workflow orchestration service built on Apache Airflow. It helps users author, schedule, and monitor data pipelines that span across clouds and on-premises data centers.
 
-**APIs.json:** [https://raw.githubusercontent.com/api-evangelist/google-cloud-composer/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/google-cloud-composer/refs/heads/main/apis.yml)
+**Areas:** Apache Airflow · Data Pipeline · Google Cloud · Workflow Orchestration
 
-## Scope
+## Google Cloud Composer on APIs.io
 
-- **Type:** Index
+Everything profiled for Google Cloud Composer is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/google-cloud-composer/](https://apis.io/providers/google-cloud-composer/)** — or go straight to one of the APIs or properties below.
 
-## Tags
+### APIs (3)
 
-- Apache Airflow
-- Data Pipelines
-- Google Cloud
-- Workflow Orchestration
+- [Google Cloud Composer Environments API](https://apis.io/apis/google-cloud-composer/google-cloud-composer-environments-api/) — Operations for managing Composer environments
+- [Google Cloud Composer Operations API](https://apis.io/apis/google-cloud-composer/google-cloud-composer-operations-api/) — Long-running operation management
+- [Google Cloud Composer image versions API](https://apis.io/apis/google-cloud-composer/google-cloud-composer-image-versions-api/) — Operations for listing available image versions
 
-## Timestamps
+### Published properties
 
-- **Created:** 2026-03-13
-- **Modified:** 2026-05-19
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-## APIs
+#### Agentic access (1)
 
-### Google Cloud Composer API
+Which operations an agent can call, which act, and which need a human in the loop.
 
-The Cloud Composer API manages Apache Airflow environments on Google Cloud Platform. It provides methods to create, update, delete, and manage Composer environments, check available image versions, and monitor long-running operations.
+- [Google Cloud Composer Agentic Access](https://apis.io/agentic-access/google-cloud-composer/google-cloud-composer-agentic-access/)
 
-- **Human URL:** [https://cloud.google.com/composer/docs](https://cloud.google.com/composer/docs)
-- **Base URL:** `https://composer.googleapis.com`
+#### JSON Schema (1)
 
-#### Tags
+The data models the API reads and writes.
 
-- Airflow
-- Environments
-- Workflow Orchestration
+- [Google Cloud Composer Environment](https://apis.io/schemas/google-cloud-composer/google-cloud-composer-environment/)
 
-#### Properties
+#### JSON-LD (1)
 
-- [Documentation](https://cloud.google.com/composer/docs/reference/rest)
-- [OpenAPI](openapi/google-cloud-composer-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Postman Collection](collections/google-cloud-composer.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/google-cloud-composer.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-- [Authentication](https://cloud.google.com/docs/authentication)
-- [Getting Started](https://cloud.google.com/composer/docs/quickstart)
-- [JSON Schema](json-schema/google-cloud-composer-environment-schema.json) — [JSON Schema](https://json-schema.org/specification)
+Linked-data contexts for the provider's vocabulary.
 
-## Common Properties
+- [Google Cloud Composer Context](https://apis.io/jsonld/google-cloud-composer/google-cloud-composer-context/)
 
-- [GitHub Organization](https://github.com/GoogleCloudPlatform)
-- [Portal](https://cloud.google.com/composer)
-- [Getting Started](https://cloud.google.com/composer/docs/quickstart)
+#### Collections (7)
+
+Postman and Open Collection request collections.
+
+- [Google Cloud Composer API](https://apis.io/collections/google-cloud-composer/open-google-cloud-composer/)
+- [Google Cloud Composer Environments API](https://apis.io/collections/google-cloud-composer/open-google-cloud-composer-environments-api/)
+- [Google Cloud Composer Environments ImageVersions API](https://apis.io/collections/google-cloud-composer/open-google-cloud-composer-imageversions-api/)
+- [Google Cloud Composer Environments Operations API](https://apis.io/collections/google-cloud-composer/open-google-cloud-composer-operations-api/)
+- [Google Cloud Composer Environments API](https://apis.io/collections/google-cloud-composer/postman-google-cloud-composer-environments-api/)
+- [Google Cloud Composer Environments ImageVersions API](https://apis.io/collections/google-cloud-composer/postman-google-cloud-composer-imageversions-api/)
+- [Google Cloud Composer Environments Operations API](https://apis.io/collections/google-cloud-composer/postman-google-cloud-composer-operations-api/)
+
+#### Governance rules (1)
+
+Spectral rulesets for the provider's contracts.
+
+- [Google Cloud Composer — jsonschema rules](https://apis.io/rules/google-cloud-composer/google-cloud-composer-jsonschema-spectral-rules/)
+
+#### Security (3)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Google Cloud Composer Authentication](https://apis.io/security/google-cloud-composer/google-cloud-composer-authentication/)
+- [Google Cloud Composer Domain Security](https://apis.io/security/google-cloud-composer/google-cloud-composer-domain-security/)
+- [Google Cloud Composer Vulnerability Disclosure](https://apis.io/security/google-cloud-composer/google-cloud-composer-vulnerability-disclosure/)
+
+#### OAuth scopes (1)
+
+The permissions the API asks for.
+
+- [Google Cloud Composer Scopes](https://apis.io/scopes/google-cloud-composer/google-cloud-composer-scopes/)
+
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [Google Cloud Composer Plans Pricing](https://apis.io/plans/google-cloud-composer/google-cloud-composer-plans-pricing/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Google Cloud Composer Rate Limits](https://apis.io/rate-limits/google-cloud-composer/google-cloud-composer-rate-limits/)
+
+#### FinOps (1)
+
+What the API costs to run, by operation.
+
+- [Google Cloud Composer Finops](https://apis.io/finops/google-cloud-composer/google-cloud-composer-finops/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://www.google.com/)
 - [Documentation](https://cloud.google.com/composer/docs)
-- [Authentication](https://cloud.google.com/docs/authentication)
+- [Getting started](https://cloud.google.com/composer/docs/quickstart)
 - [Pricing](https://cloud.google.com/composer/pricing)
-- [Terms of Service](https://cloud.google.com/terms)
-- [Privacy Policy](https://policies.google.com/privacy)
-- [Status Page](https://status.cloud.google.com/)
 - [Support](https://cloud.google.com/composer/docs/support)
-- [JSON-LD](json-ld/google-cloud-composer-context.jsonld) — [JSON-LD](https://www.w3.org/TR/json-ld11/)
-- [Integrations](https://cloud.google.com/marketplace)
+- [Terms of service](https://cloud.google.com/terms)
+- [Privacy policy](https://policies.google.com/privacy)
+- [GitHub](https://github.com/GoogleCloudPlatform)
+- [Status](https://status.cloud.google.com/)
 
-## Maintainers
+## API Evangelist rating
 
-**FN:** Kin Lane
-**Email:** kin@apievangelist.com
+**Kin Score 46.9** — developing · rubric 0.25.0 · scored 2026-10-23
+
+| Facet | Score |
+|---|---|
+| Discoverability | 57.1 |
+| Contract quality | 58.1 |
+| Contract governance | 9.8 |
+| Operational transparency | 36.8 |
+| Developer ergonomics | 48.8 |
+| Access clarity | 39.5 |
+
+**Agent readiness 24.6** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | negotiable (partial credit) |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | derived (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | documented (partial credit) |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+| Pagination Ratio | na |
+| Operation Distinctiveness | distinct |
+
+**Regulatory alignment 40.2** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/google-cloud-composer/](https://apis.io/providers/google-cloud-composer/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Google Cloud Composer: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/google-cloud-composer/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
